@@ -1,0 +1,220 @@
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #363740;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80px;
+  }
+  
+  .MuiMenuItem-root {
+    width: auto;
+    overflow: hidden;
+    /* font-size: 1rem; */
+    box-sizing: border-box;
+    min-height: 48px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-top: 6px;
+    white-space: nowrap;
+    letter-spacing: 0.00938em;
+    padding-bottom: 6px;
+    font-size: 1.5rem;
+  }
+  
+  .NavBar__header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .NavBar__headerIcons {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    /* margin-left: 2.1961932650073206vw; */
+  }
+  
+  .NavBar__right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .NavBar__image {
+    cursor: pointer;
+  
+    width: 16.027818448023426vw !important;
+    height: 7.8vh !important;
+  
+    margin-left: 2.1961932650073206vw;
+    margin-right: 2.1961932650073206vw;
+    z-index: 10000;
+  }
+  .NavBar__imageForDrawer {
+    cursor: pointer;
+    /* width: 96px !important; */
+    width: 50.027818448023426vw ;
+    /* height: 30px !important; */
+    height: 7.8vh !important;
+    /* margin-left: 30px; */
+    margin-left: 2.1961932650073206vw;
+    margin-right: 2.1961932650073206vw;
+  }
+  
+  .NavBar__Avatar {
+    width: 41px !important;
+    /* width: 3.001464128843338vw !important; */
+    height: 41px !important;
+    /* height:  6.56vh !important; */
+    margin-right: 35px !important;
+    /* margin-right: 2.562225475841874vw !important; */
+  }
+  
+  .NavBar__svg {
+    margin-left: 20px;
+    /* margin-left: 1.4641288433382138vw; */
+  }
+  
+  .NavBar__text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    /* font-size: 2.56vh; */
+    color: white;
+    margin-left: 10px;
+    /* margin-left: 0.7320644216691069vw; */
+    margin-top: 18px;
+    /* margin-top:  2.88vh; */
+    margin-right: 20px;
+    /* margin-right: 1.4641288433382138vw; */
+  }
+  
+  .NavBar__rightComponents {
+    margin-right: 35px;
+    /* margin-right:  2.562225475841874vw; */
+  }
+  
+  .activeBar {
+    border-bottom: 5px solid white;
+    /* border-bottom: 0.8vh solid white; */
+    margin-top: 5px;
+    /* margin-top: 0.8vh; */
+  }
+  
+  /* mobile navbar */
+  .mobileNavbar {
+    display: none;
+  }
+  .mobileNavbar__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 11vh;
+    /* background-color: #f8f8f8; */
+    background-color: #363740;
+    /* color: #c6c6c6; */
+  }
+  
+  .mobileNavbar__headerText {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 10px;
+  
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    /* color: #444444; */
+    color: #c6c6c6;
+  }
+  
+  .mobileNavbar__right {
+    display: flex;
+    align-items: center;
+  }
+  .drawer__logo {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .searchResult__div {
+    display: none;
+    position: absolute;
+    border: 0.5px solid #e7e7e7;
+    width: 400px;
+    height: 400px;
+    overflow-y: scroll;
+    /* margin-left: 66%; */
+    /* margin-left: 106.1493411420205vw; */
+    background-color: white;
+    margin-top: 10px;
+  }
+  
+  .search__row {
+    border-bottom: 0.5px solid #e5e5e5;
+  }
+  
+  .navvbar__rightComponentsAvatarName {
+    color: white;
+    white-space: nowrap;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
+  .navvbar__line {
+    background-color: #dfe0eb;
+    height: 45px;
+    width: 10px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .NavBar {
+      display: none;
+    }
+    .mobileNavbar {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 100;
+    }
+  }
+  
+  @media only screen and (max-width: 884px){
+    img.NavBar__imageForDrawer{
+      width:25.027818vw ;
+      max-width: fit-content;
+    }
+    }
+  
+  @media only screen and (max-width: 1030px) {
+    .NavBar {
+      display: none;
+    }
+    .mobileNavbar {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 9vh;
+      z-index: 100;
+    }
+  }
+  

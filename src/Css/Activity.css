@@ -1,0 +1,52 @@
+.Activity__header {
+  margin-left: 30px;
+  margin-top: 25px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  /* line-height: 21px; */
+  /* identical to box height */
+
+  color: #c6c6c6;
+}
+
+.Activity__row {
+  display: flex;
+  margin-left: 45px;
+  align-items: center;
+  margin-top: -13px;
+  /* text-align: center; */
+}
+
+.active__navlink {
+  color: blue !important;
+  background: #9fa2b4;
+  opacity: 0.08;
+}
+/* .Acivity__icons{
+   
+} */
+
+.Activity__rowText:hover {
+  color: #ffffff;
+}
+
+.Activity__rowText {
+  margin-left: 15px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 16px;
+
+  line-height: 34px;
+  color: #a4a6b3;
+}
+
+.Activity__icons {
+  /* color: #a4a6b3; */
+  color: #fff;
+  width: 20px;
+  height: 15px;
+}
