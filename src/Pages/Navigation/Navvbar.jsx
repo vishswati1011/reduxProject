@@ -156,11 +156,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        {/* <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-         
-        </Typography>
-         */}
+        
          {/* <Routes>
                   <Route exact path='/home' component={Home} />
 </Routes> */}
