@@ -134,8 +134,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   return (
     <div className='App'>
        {localStorage.getItem('token') ? (
-<Router>
-<Box sx={{ display: 'flex' }}>
+    <Router>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -195,28 +195,23 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       <DrawerHeader />
-
         <Routes>
-
           <Route exact path='/home' element={<Home/>} />
           <Route exact path='/admin' element={<Admin/>} />
           <Route exact path='/employee' element={<Employee/>} />
-          
       </Routes>
-
       </Box>
     </Box>
     </Router>
        ):(
-    <Router>
-      <Routes>
-    <Route exact path='/' element={<SignInForm/>} />
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<SignInForm/>} />
           <Route exact path='/register' element={<SignUpForm/>} />
-          </Routes>
-    </Router>
+        </Routes>
+      </Router>
        )}
          </div>
-
   );
 }
 export default MiniDrawer;
