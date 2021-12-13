@@ -3,8 +3,7 @@ const createData = (name, calories, fat, carbs, protein) => {
   id += 1;
   return { id, name, calories, fat, carbs, protein };
 };
-
-export default [
+const rowsData = [
   createData(
     "Frozen yoghurt sdafdfdssfdfsdsdsfdsfdsfsfdfsd sd fsdfsdfsdsfdsfd",
     159,
@@ -41,3 +40,4 @@ export default [
     3.9
   )
 ];
+export default rowsData;

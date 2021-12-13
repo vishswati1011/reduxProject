@@ -7,7 +7,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import rows from "./rowsData";
 
-export default () => (
+const Employee=()=> (
   <div>
     <h1 className="title">Material UI - Responsive Table</h1>
     <Paper className="container">
@@ -38,3 +38,4 @@ export default () => (
     </Paper>
   </div>
 );
+export default Employee;
