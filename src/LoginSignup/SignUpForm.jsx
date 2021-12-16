@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -12,7 +12,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-
+import { useNavigate } from "react-router";
+import axios from 'axios';
 function MadeWithLove() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -52,6 +53,43 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const [firstName,setfirstName] = useState("");
+  const [lastName,setlastName] = useState("");
+  const [email,setemail] = useState("");
+  const [phone,setphone] = useState("");
+  const [password,setpassword] = useState("");
+  const navigate=useNavigate();
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    try{
+      var formdata = {
+        fName:firstName,
+        lName:lastName,
+        phone,
+        email,
+        pwd:password,
+      }
+      
+      const response=await axios.post("http://localhost:8082/auth/signup",formdata,{
+        headers:{
+          'Access-Control-Allow-Origin': '*'
+        }
+      })
+      console.log("res",response)
+      if(response.status===200)
+      {
+        alert(response.data.message,{
+          onClose : ()=>{
+            navigate("/email-varification")
+          }
+        })
+      }
+    }catch(err)
+    {
+      alert("something went wrong")
+      console.log("error",err)
+    }
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -63,7 +101,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={(e)=>handleSubmit(e)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -75,6 +113,8 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                value={firstName}
+                onChange={(e)=>setfirstName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -86,6 +126,21 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                value={lastName}
+                onChange={(e)=>setlastName(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="phone"
+                label="Phone"
+                name="phone"
+                autoComplete="phone"
+                value={phone}
+                onChange={(e)=>setphone(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -97,6 +152,8 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={email}
+                onChange={(e)=>setemail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -109,6 +166,8 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onChange={(e)=>setpassword(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -123,7 +182,7 @@ export default function SignUp() {
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+            // className={classes.submit}
           >
             Sign Up
           </Button>

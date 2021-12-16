@@ -64,6 +64,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
         <Routes>
           <Route exact path='/' element={<SignInForm/>} />
           <Route exact path='/register' element={<SignUpForm/>} />
+          <Route exact path='/email-varification' element={<SignInForm/>} />
+
         </Routes>
       </Router>
        )}
