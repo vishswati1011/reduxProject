@@ -127,11 +127,11 @@ const Home = props => {
         <Divider />
         <List>
           <NavLink to='/home'>
-            <ListItem button key={"Mail"}>
+            <ListItem button key={"Home"}>
               <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon>
-              <ListItemText primary={"Mail"} />
+              <ListItemText primary={"Home"} />
             </ListItem>
             </NavLink>
         </List>
@@ -146,7 +146,80 @@ const Home = props => {
               <ListItemText primary={"Employee"} />
             </ListItem>
             </NavLink>
-          <Link to='/admin'>
+          <Link to='/chart'>
+            <ListItem button key={"chart"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Chart"} />
+            </ListItem>
+            </Link>
+            {/** */}
+            <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>       
+                     <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
+            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+              <ListItemIcon>
+                <InboxIcon  />
+              </ListItemIcon>
+              <ListItemText primary={"Admin"} />
+            </ListItem>
+            </Link>          <Link to='/admin'>
             <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
               <ListItemIcon>
                 <InboxIcon  />

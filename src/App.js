@@ -27,6 +27,8 @@ import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import Home from './Component/Home/Home';
 import Admin from './Component/Admin/Admin';
 import Employee from './Component/Home/Employee';
+import Chart from './Component/Chart';
+
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -44,7 +46,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
  const  MiniDrawer=()=> {
   return (
     <div className='App'>
-  {localStorage.getItem('token') ? (
+  {/* {localStorage.getItem('token') ? ( */}
     <Router>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -54,21 +56,23 @@ const DrawerHeader = styled('div')(({ theme }) => ({
         <Routes>
           <Route exact path='/home' element={<Home/>} />
           <Route exact path='/admin' element={<Admin/>} />
+          <Route exact path='/chart' element={<Chart/>} />
+
           <Route exact path='/employee' element={<Employee/>} />
       </Routes>
       </Box>
     </Box>
     </Router>
-       ):(
-      <Router>
+       {/* ):( */}
+      {/* <Router>
         <Routes>
           <Route exact path='/' element={<SignInForm/>} />
           <Route exact path='/register' element={<SignUpForm/>} />
           <Route exact path='/email-varification' element={<SignInForm/>} />
 
         </Routes>
-      </Router>
-       )}
+      </Router> */}
+       {/* )} */}
          </div>
   );
 }
