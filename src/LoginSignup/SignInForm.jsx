@@ -13,7 +13,9 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { useNavigate } from "react-router";
-
+import axios from 'axios'
+import { useState } from "react";
+import { WindowSharp } from "@mui/icons-material";
 const MadeWithLove = () => (
   <Typography variant="body2" color="textSecondary" align="center">
     {"Built with love by the "}
@@ -57,10 +59,43 @@ const useStyles = makeStyles(theme => ({
 const SignInSide = () => {
   const classes = useStyles();
   const navigate=useNavigate();
+  const [email,setEmail]=useState("");
+  const [password,setPassword]=useState("");
+  const handleSubmit = async(e)=>{
 
-  const handleSubmit =()=>{
-      localStorage.setItem('token',"loginsuccessfull")
-      navigate("/")
+     
+      // navigate("/")
+      e.preventDefault();
+    try{
+      var formdata = {
+        email,
+        password,
+      }
+      
+      const response=await axios.post("http://localhost:8082/auth/login",formdata,{
+        headers:{
+          'Access-Control-Allow-Origin': '*'
+        }
+      })
+      console.log("res",response)
+      if(response.status===200)
+      {
+
+        localStorage.setItem('token',"loginsuccessfull")
+        localStorage.setItem("fName",response.data.payload.fName);
+        localStorage.setItem("email",response.data.payload.email);
+        localStorage.setItem("currentUser_id",response.data.payload._id)
+        alert(response.data.message,{
+          onClose : ()=>{
+            Window.location.reload="/home"
+          }
+        })
+      }
+    }catch(err)
+    {
+      alert("something went wrong")
+      console.log("error",err)
+    }
 
 }
   return (
@@ -86,6 +121,7 @@ const SignInSide = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e)=>setEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -97,6 +133,8 @@ const SignInSide = () => {
               type="password"
               id="password"
               autoComplete="current-password"
+
+              onChange={(e)=>setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}

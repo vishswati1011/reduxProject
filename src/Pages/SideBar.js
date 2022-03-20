@@ -162,69 +162,37 @@ const Home = props => {
               </ListItemIcon>
               <ListItemText primary={"Admin"} />
             </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+            </Link>         
+            <Link to='/add-friend'>
+            <ListItem button key={"add-friend"} style={{borderBottom:'none'}}>
               <ListItemIcon>
                 <InboxIcon  />
               </ListItemIcon>
-              <ListItemText primary={"Admin"} />
+              <ListItemText primary={"Add-friend"} />
             </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+            </Link> 
+            <Link to='/friend'>
+            <ListItem button key={"friend"} style={{borderBottom:'none'}}>
               <ListItemIcon>
                 <InboxIcon  />
               </ListItemIcon>
-              <ListItemText primary={"Admin"} />
+              <ListItemText primary={"Friend"} />
             </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+            </Link>
+             <Link to='/chat'>
+            <ListItem button key={"chat"} style={{borderBottom:'none'}}>
               <ListItemIcon>
                 <InboxIcon  />
               </ListItemIcon>
-              <ListItemText primary={"Admin"} />
+              <ListItemText primary={"Chat"} />
             </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
+            </Link>
+            <Link to='/chat2'>
+            <ListItem button key={"chat2"} style={{borderBottom:'none'}}>
               <ListItemIcon>
                 <InboxIcon  />
               </ListItemIcon>
-              <ListItemText primary={"Admin"} />
-            </ListItem>
-            </Link>       
-                     <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
-              <ListItemIcon>
-                <InboxIcon  />
-              </ListItemIcon>
-              <ListItemText primary={"Admin"} />
-            </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
-              <ListItemIcon>
-                <InboxIcon  />
-              </ListItemIcon>
-              <ListItemText primary={"Admin"} />
-            </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
-              <ListItemIcon>
-                <InboxIcon  />
-              </ListItemIcon>
-              <ListItemText primary={"Admin"} />
-            </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
-              <ListItemIcon>
-                <InboxIcon  />
-              </ListItemIcon>
-              <ListItemText primary={"Admin"} />
-            </ListItem>
-            </Link>          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
-              <ListItemIcon>
-                <InboxIcon  />
-              </ListItemIcon>
-              <ListItemText primary={"Admin"} />
+              <ListItemText primary={"Chat-2"} />
             </ListItem>
             </Link>
         </List>
