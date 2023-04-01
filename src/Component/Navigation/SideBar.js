@@ -17,7 +17,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import Header from './Header/Header';
+import Header from './Header';
 
 const drawerWidth = 240;
 
@@ -126,7 +126,7 @@ const Home = props => {
         </DrawerHeader>
         <Divider />
         <List>
-          <NavLink to='/home'>
+          <NavLink to='/'>
             <ListItem button key={"Mail"}>
               <ListItemIcon>
                 <InboxIcon />
@@ -138,7 +138,7 @@ const Home = props => {
         <Divider />
         <List>
         <List>
-        <NavLink to='/employee'>
+        <NavLink to='/chat'>
         <ListItem button key={"Employee"}>
               <ListItemIcon>
                 <MailIcon />
@@ -146,14 +146,7 @@ const Home = props => {
               <ListItemText primary={"Employee"} />
             </ListItem>
             </NavLink>
-          <Link to='/admin'>
-            <ListItem button key={"Admin"} style={{borderBottom:'none'}}>
-              <ListItemIcon>
-                <InboxIcon  />
-              </ListItemIcon>
-              <ListItemText primary={"Admin"} />
-            </ListItem>
-            </Link>
+         
         </List>
         </List>
       </Drawer>

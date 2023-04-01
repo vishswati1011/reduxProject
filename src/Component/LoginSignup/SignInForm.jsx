@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -13,6 +13,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { useNavigate } from "react-router";
+import axios from "axios";
+import { API_URL } from "../Services/url";
 
 const MadeWithLove = () => (
   <Typography variant="body2" color="textSecondary" align="center">
@@ -57,9 +59,17 @@ const useStyles = makeStyles(theme => ({
 const SignInSide = () => {
   const classes = useStyles();
   const navigate=useNavigate();
-
-  const handleSubmit =()=>{
-      localStorage.setItem('token',"loginsuccessfull")
+  const [email,setEmail]= useState("");
+  const [password,setPassword] = useState("");
+  const handleSubmit =async()=>{
+      let data= {
+        email,password
+      }
+      const response = await axios.post(`${API_URL}/users/login`,data)
+      console.log(response,"response login")
+      if(response.data.success){
+        localStorage.setItem("chatAppuserid",response.data.payload._id)
+      }
       navigate("/")
 
 }
@@ -86,6 +96,7 @@ const SignInSide = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e)=>setEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -97,6 +108,8 @@ const SignInSide = () => {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={(e)=>setPassword(e.target.value)}
+
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
